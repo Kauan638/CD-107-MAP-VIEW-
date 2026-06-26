@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CD-107 MAP VIEW PRO</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo">
+<i class="fa-solid fa-cubes"></i>
+<div>
+<h1>CD-107 MAP VIEW <span>PRO</span></h1>
+<p>Mapa Interativo do Centro de Distribuição</p>
+</div>
+</div>
+
+<section class="card">
+<h3>UPLOAD DE ARQUIVOS</h3>
+<div class="upload-box">
+<i class="fa-solid fa-cloud-arrow-up"></i>
+<p>Arraste arquivos ou clique</p>
+<input type="file" multiple>
+</div>
+</section>
+
+<section class="card">
+<h3>FILTROS</h3>
+<select><option>Pavilhão</option></select>
+<select><option>Rua</option></select>
+<select><option>Situação</option></select>
+<input type="text" placeholder="Buscar SKU ou Endereço">
+<button class="btn">Limpar Filtros</button>
+</section>
+
+<section class="card">
+<h3>LEGENDA</h3>
+<ul class="legenda">
+<li><span class="ocupada"></span> Ocupada</li>
+<li><span class="vazia"></span> Vazia</li>
+<li><span class="baixa"></span> Baixa Ocupação</li>
+<li><span class="ruptura"></span> Ruptura</li>
+<li><span class="bloqueada"></span> Bloqueada</li>
+<li><span class="pulmao"></span> Pulmão</li>
+</ul>
+</section>
+</aside>
+
+<main>
+<header class="topo">
+<div class="kpi"><h4>TOTAL POSIÇÕES</h4><h2>12.842</h2></div>
+<div class="kpi verde"><h4>OCUPADAS</h4><h2>9.652</h2></div>
+<div class="kpi azul"><h4>VAZIAS</h4><h2>2.163</h2></div>
+<div class="kpi"><h4>BLOQUEADAS</h4><h2>568</h2></div>
+<div class="kpi vermelho"><h4>RUPTURA</h4><h2>459</h2></div>
+</header>
+
+<section class="mapa-card">
+<div class="titulo-linha">
+<h2>MAPA DO CD</h2>
+<button class="btn atualizar">Atualizar Mapa</button>
+</div>
+<div class="mapa"></div>
+</section>
+
+<section class="inferior">
+<div class="detalhes card2">
+<h3>DETALHES DA POSIÇÃO</h3>
+<h1>71.118.1.1</h1>
+<table>
+<tr><td>Produto</td><td>ARROZ 5KG</td></tr>
+<tr><td>SKU</td><td>789123456</td></tr>
+<tr><td>Quantidade</td><td>48 UN</td></tr>
+<tr><td>Status</td><td>OCUPADA</td></tr>
+</table>
+</div>
+<div class="card2"><h3>POSIÇÕES EM DESTAQUE</h3></div>
+<div class="card2">
+<h3>BUSCA RÁPIDA</h3>
+<input type="text" placeholder="Digite SKU ou endereço">
+</div>
+</section>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

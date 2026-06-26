@@ -1,0 +1,34 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#020916;color:#fff;}
+.container{display:grid;grid-template-columns:320px 1fr;min-height:100vh;}
+.sidebar{padding:25px;background:#071322;border-right:1px solid #123;}
+.logo{display:flex;gap:15px;align-items:center;margin-bottom:30px;}
+.logo i{font-size:45px;color:#0d6efd;}
+.logo span{color:#0d6efd;}
+.logo p{font-size:12px;opacity:.7;}
+.card,.card2,.mapa-card,.kpi{background:#0b1728;border:1px solid #18314d;}
+.card{padding:20px;border-radius:18px;margin-bottom:20px;}
+.upload-box{border:2px dashed #234;padding:40px;text-align:center;border-radius:15px;}
+.upload-box i{font-size:45px;color:#0d6efd;margin-bottom:15px;}
+.card select,.card input{width:100%;padding:14px;margin-top:10px;background:#071322;border:none;color:#fff;border-radius:12px;}
+.btn{width:100%;padding:14px;margin-top:15px;background:#0d6efd;border:none;color:#fff;border-radius:12px;cursor:pointer;}
+main{padding:25px;}
+.topo{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-bottom:25px;}
+.kpi{padding:20px;border-radius:15px;}
+.verde h4{color:#3ddc84}.azul h4{color:#4fa8ff}.vermelho h4{color:#ff4b4b}
+.mapa-card{padding:25px;border-radius:20px;}
+.titulo-linha{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.atualizar{width:220px;margin:0}
+.mapa{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;}
+.rua{background:#09192d;border-radius:12px;padding:10px;}
+.rua h3{text-align:center;margin-bottom:8px;}
+.enderecos{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;}
+.posicao{height:8px;border-radius:2px;cursor:pointer;}
+.posicao:hover{transform:scale(1.2);}
+.inferior{margin-top:25px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+.card2{padding:20px;border-radius:20px;}
+table{width:100%;margin-top:20px} td{padding:10px 0;border-bottom:1px solid #18314d;}
+.legenda{list-style:none;margin-top:15px}.legenda li{display:flex;gap:10px;align-items:center;margin-bottom:12px;}
+.legenda span{width:18px;height:18px;border-radius:4px;display:block;}
+.ocupada{background:#43d854}.vazia{background:#fff}.baixa{background:#ffc107}.ruptura{background:#ff3030}.bloqueada{background:#111}.pulmao{background:#2979ff}
+@media(max-width:1400px){.container{grid-template-columns:1fr}.topo{grid-template-columns:repeat(2,1fr)}.inferior{grid-template-columns:1fr}}
