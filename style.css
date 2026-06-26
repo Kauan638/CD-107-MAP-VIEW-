@@ -67,13 +67,19 @@ LAYOUT PRINCIPAL
     display:grid;
 
     grid-template-columns:
-    320px 1fr 270px;
+    300px minmax(0,1fr) 350px;
 
     gap:20px;
 
+    width:100%;
+
+    max-width:1920px;
+
+    margin:auto;
+
     min-height:100vh;
 
-    padding:20px;
+    padding:15px;
 }
 
 /* ========================================
@@ -368,7 +374,7 @@ MAPA
 
     width:100%;
 
-    min-height:550px;
+    height:calc(100vh - 270px);
 
     border-radius:18px;
 
@@ -378,13 +384,15 @@ MAPA
 
     padding:20px;
 
-    overflow:auto;
+    overflow-y:auto;
+
+    overflow-x:hidden;
 
     display:flex;
 
     flex-direction:column;
 
-    gap:25px;
+    gap:15px;
 }
 
 /* ========================================
@@ -423,13 +431,15 @@ RUAS
 
     display:grid;
 
-    grid-template-columns:repeat(60,1fr);
+    grid-template-columns:
+    repeat(auto-fit,minmax(8px,1fr));
 
     gap:2px;
 
+    width:100%;
+
     flex:1;
 }
-
 .posicao{
 
     width:100%;
