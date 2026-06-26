@@ -1,34 +1,613 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#020916;color:#fff;}
-.container{display:grid;grid-template-columns:320px 1fr;min-height:100vh;}
-.sidebar{padding:25px;background:#071322;border-right:1px solid #123;}
-.logo{display:flex;gap:15px;align-items:center;margin-bottom:30px;}
-.logo i{font-size:45px;color:#0d6efd;}
-.logo span{color:#0d6efd;}
-.logo p{font-size:12px;opacity:.7;}
-.card,.card2,.mapa-card,.kpi{background:#0b1728;border:1px solid #18314d;}
-.card{padding:20px;border-radius:18px;margin-bottom:20px;}
-.upload-box{border:2px dashed #234;padding:40px;text-align:center;border-radius:15px;}
-.upload-box i{font-size:45px;color:#0d6efd;margin-bottom:15px;}
-.card select,.card input{width:100%;padding:14px;margin-top:10px;background:#071322;border:none;color:#fff;border-radius:12px;}
-.btn{width:100%;padding:14px;margin-top:15px;background:#0d6efd;border:none;color:#fff;border-radius:12px;cursor:pointer;}
-main{padding:25px;}
-.topo{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-bottom:25px;}
-.kpi{padding:20px;border-radius:15px;}
-.verde h4{color:#3ddc84}.azul h4{color:#4fa8ff}.vermelho h4{color:#ff4b4b}
-.mapa-card{padding:25px;border-radius:20px;}
-.titulo-linha{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
-.atualizar{width:220px;margin:0}
-.mapa{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;}
-.rua{background:#09192d;border-radius:12px;padding:10px;}
-.rua h3{text-align:center;margin-bottom:8px;}
-.enderecos{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;}
-.posicao{height:8px;border-radius:2px;cursor:pointer;}
-.posicao:hover{transform:scale(1.2);}
-.inferior{margin-top:25px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
-.card2{padding:20px;border-radius:20px;}
-table{width:100%;margin-top:20px} td{padding:10px 0;border-bottom:1px solid #18314d;}
-.legenda{list-style:none;margin-top:15px}.legenda li{display:flex;gap:10px;align-items:center;margin-bottom:12px;}
-.legenda span{width:18px;height:18px;border-radius:4px;display:block;}
-.ocupada{background:#43d854}.vazia{background:#fff}.baixa{background:#ffc107}.ruptura{background:#ff3030}.bloqueada{background:#111}.pulmao{background:#2979ff}
-@media(max-width:1400px){.container{grid-template-columns:1fr}.topo{grid-template-columns:repeat(2,1fr)}.inferior{grid-template-columns:1fr}}
+/* ========================================
+RESET
+======================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+:root{
+
+    --bg:#020814;
+    --card:#081321;
+    --card2:#0c1b2e;
+
+    --border:#15304d;
+
+    --blue:#0d6efd;
+    --green:#37d67a;
+    --yellow:#ffc107;
+    --red:#ff3d3d;
+    --white:#f4f6f9;
+    --black:#111;
+
+    --shadow:
+    0 10px 35px rgba(0,0,0,.35);
+
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top,
+    #08192f 0%,
+    #030a14 50%,
+    #020814 100%);
+
+    color:white;
+    min-height:100vh;
+}
+
+/* ========================================
+SCROLL
+======================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#06111f;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#1b4c8a;
+    border-radius:20px;
+}
+
+/* ========================================
+LAYOUT PRINCIPAL
+======================================== */
+
+.container{
+
+    display:grid;
+
+    grid-template-columns:
+    320px 1fr 270px;
+
+    gap:20px;
+
+    min-height:100vh;
+
+    padding:20px;
+}
+
+/* ========================================
+SIDEBAR ESQUERDA
+======================================== */
+
+.sidebar{
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.logo{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+
+    box-shadow:var(--shadow);
+}
+
+.logo i{
+
+    font-size:55px;
+    color:var(--blue);
+}
+
+.logo h1{
+
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo span{
+
+    color:var(--blue);
+}
+
+.logo p{
+
+    opacity:.7;
+    font-size:13px;
+}
+
+/* ========================================
+CARDS
+======================================== */
+
+.card,
+.card2,
+.kpi,
+.mapa-card,
+.right-card{
+
+    background:
+
+    linear-gradient(
+        180deg,
+        rgba(15,30,50,.96),
+        rgba(8,18,32,.96)
+    );
+
+    border:
+
+    1px solid rgba(50,100,180,.25);
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    backdrop-filter:blur(15px);
+}
+
+.card{
+
+    padding:22px;
+}
+
+.card h3{
+
+    margin-bottom:18px;
+
+    font-size:18px;
+}
+
+/* ========================================
+UPLOAD
+======================================== */
+
+.upload-box{
+
+    border:2px dashed #27486f;
+
+    border-radius:18px;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.upload-box:hover{
+
+    background:#10233c;
+}
+
+.upload-box i{
+
+    font-size:50px;
+
+    color:var(--blue);
+
+    margin-bottom:15px;
+}
+
+.upload-box p{
+
+    opacity:.8;
+}
+
+.upload-box input{
+
+    display:none;
+}
+
+/* ========================================
+INPUTS
+======================================== */
+
+select,
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#06101d;
+
+    color:white;
+
+    outline:none;
+
+    border:1px solid #17385f;
+}
+
+input::placeholder{
+
+    color:#8aa1b9;
+}
+
+/* ========================================
+BOTÕES
+======================================== */
+
+.btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #0d6efd,
+        #267dff
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    margin-top:15px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 0 20px rgba(13,110,253,.4);
+}
+
+/* ========================================
+ÁREA CENTRAL
+======================================== */
+
+main{
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* ========================================
+KPIS
+======================================== */
+
+.topo{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    gap:15px;
+}
+
+.kpi{
+
+    padding:20px;
+}
+
+.kpi h4{
+
+    font-size:14px;
+
+    opacity:.8;
+
+    margin-bottom:8px;
+}
+
+.kpi h2{
+
+    font-size:35px;
+}
+
+.kpi.verde h4{
+
+    color:var(--green);
+}
+
+.kpi.azul h4{
+
+    color:#4db5ff;
+}
+
+.kpi.vermelho h4{
+
+    color:var(--red);
+}
+
+/* ========================================
+MAPA
+======================================== */
+
+.mapa-card{
+
+    padding:25px;
+}
+
+.titulo-linha{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.mapa{
+
+    width:100%;
+
+    min-height:550px;
+
+    border-radius:18px;
+
+    background:#030a13;
+
+    border:1px solid #17385f;
+
+    padding:20px;
+
+    overflow:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+}
+
+/* ========================================
+RUAS
+======================================== */
+
+.rua{
+
+    display:flex;
+
+    gap:5px;
+
+    align-items:flex-start;
+}
+
+.numero-rua{
+
+    width:70px;
+
+    height:40px;
+
+    border-radius:10px;
+
+    background:#0d6efd;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+}
+
+.enderecos{
+
+    display:grid;
+
+    grid-template-columns:repeat(60,1fr);
+
+    gap:2px;
+
+    flex:1;
+}
+
+.posicao{
+
+    width:100%;
+
+    height:12px;
+
+    border-radius:2px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.posicao:hover{
+
+    transform:scale(1.8);
+
+    z-index:999;
+}
+
+/* ========================================
+CARDS INFERIORES
+======================================== */
+
+.inferior{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1.5fr 1fr;
+
+    gap:20px;
+}
+
+.card2{
+
+    padding:25px;
+}
+
+.card2 h3{
+
+    margin-bottom:20px;
+}
+
+table{
+
+    width:100%;
+}
+
+td{
+
+    padding:12px 0;
+
+    border-bottom:1px solid #17385f;
+}
+
+/* ========================================
+LEGENDA
+======================================== */
+
+.legenda{
+
+    list-style:none;
+}
+
+.legenda li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:15px;
+}
+
+.legenda span{
+
+    width:18px;
+    height:18px;
+
+    border-radius:5px;
+}
+
+.ocupada{
+    background:var(--green);
+}
+
+.vazia{
+    background:white;
+}
+
+.baixa{
+    background:var(--yellow);
+}
+
+.ruptura{
+    background:var(--red);
+}
+
+.bloqueada{
+    background:#000;
+}
+
+.pulmao{
+    background:#2979ff;
+}
+
+/* ========================================
+PAINEL DIREITO
+======================================== */
+
+.right-panel{
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.right-card{
+
+    padding:22px;
+}
+
+.right-card h3{
+
+    margin-bottom:20px;
+}
+
+/* ========================================
+RESPONSIVO
+======================================== */
+
+@media(max-width:1700px){
+
+    .container{
+
+        grid-template-columns:
+        300px 1fr;
+    }
+
+    .right-panel{
+
+        display:none;
+    }
+}
+
+@media(max-width:1200px){
+
+    .container{
+
+        grid-template-columns:1fr;
+    }
+
+    .topo{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .inferior{
+
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:700px){
+
+    .topo{
+
+        grid-template-columns:1fr;
+    }
+
+    .titulo-linha{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+}
