@@ -67,21 +67,18 @@ LAYOUT PRINCIPAL
     display:grid;
 
     grid-template-columns:
-    300px minmax(0,1fr) 350px;
+    280px
+    1fr
+    260px;
 
-    gap:20px;
-
-    width:100%;
-
-    max-width:1920px;
-
-    margin:auto;
+    gap:12px;
 
     min-height:100vh;
 
-    padding:15px;
-}
+    width:100vw;
 
+    padding:8px;
+}
 /* ========================================
 SIDEBAR ESQUERDA
 ======================================== */
@@ -101,7 +98,7 @@ SIDEBAR ESQUERDA
 
     border-radius:20px;
 
-    padding:25px;
+    padding:18px;
 
     display:flex;
     align-items:center;
